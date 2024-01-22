@@ -1,0 +1,866 @@
+/*-----------------------------------------------------------------*/
+
+@font-face {
+    font-family: Lato-Light;
+    src: url(Font/Lato-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lato-Reg;
+    src: url(Font/Lato-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lato-Bold;
+    src: url(Font/Lato-Bold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lato-Black;
+    src: url(Font/Lato-Black.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lato-BoldItalic;
+    src: url(Font/Lato-BoldItalic.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Montserrat-Black;
+    src: url(Font/Montserrat-Black.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(Font/Montserrat-Bold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: BricolageGrotesque-Regular;
+    src: url(Font/BricolageGrotesque-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: BricolageGrotesque-Light;
+    src: url(Font/BricolageGrotesque-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: BricolageGrotesque-ExtraLight;
+    src: url(Font/BricolageGrotesque-ExtraLight.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: BricolageGrotesque-Bold;
+    src: url(Font/BricolageGrotesque-Bold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*-----------------------------------------------------------------*/
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+}
+
+#header {
+    width: 10vw;
+    margin-left: 3%;
+    margin-top: 2.5%;
+    margin-bottom: 2%;
+    display: inline-block;
+    position: fixed;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#logo {
+    width: 100%;
+}
+
+.box {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    text-align: left;
+    opacity: 0;
+    top: -500px;
+    pointer-events: none;
+    transition: all .7s ease-out;
+
+}
+
+.active.box {
+    opacity: .95;
+    top: 0;
+    pointer-events: fill;
+    position: fixed;
+    z-index: 5;
+}
+
+.plus {
+    position: fixed;
+    right: 2%;
+    margin-top: 1%;
+    cursor: pointer;
+    color: white;
+    z-index: 3;
+    font-size: 6vw !important;
+}
+
+.plus:hover {
+    opacity: .5;
+    transition: .5s; overflow: hidden;
+}
+
+.box .min {
+    position: absolute;
+    right: 3%;
+    margin-top: 2%;
+    font-size: 4vw !important;
+    cursor: pointer;
+    color: white;
+    z-index: 3;
+}
+
+.material-symbols-rounded {
+font-variation-settings:
+'FILL' 0,
+'wght' 100,
+'GRAD' 0,
+'opsz' 24
+}
+
+.box .min:hover {
+    opacity: .5;
+    transition: .5s;
+}
+
+.menu {
+    width: 80%;
+    list-style: none;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.menu .li {
+    display: inline-block;
+    width: 27%;
+    margin-bottom: 5%;
+    transition: all 0.5s ease;
+}
+
+.menu .li a {
+    color: white;
+    font-size: 4vw;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    font-family: BricolageGrotesque-Light;
+    transition: all 0.5s ease;
+}
+
+.menu .li a:hover {
+    transform: scale(1.1);
+    backface-visibility: hidden;
+}
+
+.menu .aboutus {
+    margin-left: -2%;
+    margin-right: 2%;
+}
+
+.menu .home, .menu .service, .submenu {
+    margin-left: 9%;
+}
+
+.menu .contact {
+    float: right;
+    margin-right: 9.4%;
+}
+
+.menu .service {
+    margin-bottom: 1%;
+}
+
+.submenu {
+    width: 82%;
+}
+
+.submenu li {
+    margin-bottom: 2%;
+    display: inline-block;
+    width: 19%;
+    transition: all 0.5s ease;
+}
+
+.submenu li a {
+    color: white;
+    font-size: 1.2vw;
+    font-family: BricolageGrotesque-ExtraLight;
+    text-decoration: underline 0.05em rgba(249, 249, 249, 0);
+    transition: text-decoration-color .9s;
+}
+
+.submenu li a:hover {
+    text-decoration: underline 0.05em rgba(249, 249, 249, 1);
+}
+
+.submenu .last {
+    margin-bottom: 0;
+}
+
+.submenu .iconcontact {
+    width: 3%;
+    float: right;
+}
+
+.submenu .ig {
+    margin-right: -3.7%;
+}
+
+.submenu .wa {
+    margin-right: -7%;
+}
+
+.submenu .iconcontact i {
+    font-size: 1.4vw;
+    color: white;
+}
+
+.submenu .iconcontact i:hover {
+    opacity: .5;
+    transition: .7s;
+}
+
+@media (max-width: 770px) {
+    #header {
+        width: 27vw;
+        margin-left: 6%;
+        margin-top: 5%;
+    }
+
+    .plus {
+        right: 2.5%;
+        margin-top: .5%;
+        font-size: 18vw !important;
+    }
+
+    .box .min {
+        right: 6%;
+        margin-top: 3%;
+        font-size: 15vw !important;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .menu .li {
+        display: block;
+        width: 39%;
+        margin-bottom: 5%;
+        margin-left: 15%;
+    }
+
+    .menu .li a {
+        font-size: 8vw;
+        display: block;
+    }
+
+    .menu .contact {
+        float: left;
+        margin-top: 43%;
+        margin-bottom: 7%;
+    }
+
+    .menu .service {
+        margin-bottom: 1%;
+    }
+
+    .submenu {
+        position: absolute;
+        margin-left: 15%;
+    }
+
+    .submenu li, .submenu .last {
+        margin-bottom: 2%;
+        display: block;
+        width: 43%;
+    }
+
+    .submenu li a {
+        font-size: 4vw;
+    }
+
+    .last {
+        position: absolute;
+    }
+
+    .bd {
+        margin-top: 8%;
+    }
+
+    .dr {
+        margin-top: 16%;
+    }
+
+    .submenu .iconcontact {
+        float: left;
+        margin-top: 42%;
+        margin-right: 0;
+        display: block;
+    }
+
+    .submenu .ig {
+        margin-right: 5%;
+    }
+
+    .submenu .iconcontact i {
+        font-size: 4.5vw;
+    }
+}
+
+
+/*-----------------------------------------------------------------*/
+
+.parallax {
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+.parallax img {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+#text {
+    font-family: BricolageGrotesque-Light;
+    position: fixed;
+    font-size: 7vw;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 770px) {
+    #text {
+        font-size: 12vw;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*-----------------------------------------------------------------*/
+
+.content {
+    width: 100%;
+    background-color: white;
+    height: 15vw;
+    position: relative;
+    padding-top: 5%;
+    margin-top: 100vh;
+}
+
+.content img {
+    width: 8%;
+    margin-left: 10%;
+    margin-right: 7%;
+    padding-bottom: 2%;
+}
+
+.content .content-text-1 {
+    font-family: Lato-Light;
+    display: inline-block;
+    font-size: 2.1vw;
+    width: 22%;
+}
+
+.content .content-text-2 {
+    font-family: Lato-Reg;
+    font-size: 1.1vw;
+    width: 26%;
+    text-align: justify;
+    float: right;
+    margin-right: 10%;
+}
+
+@media (max-width: 770px) {
+    .content {
+        height: 55vw;
+        padding-top: 8%;
+    }
+
+    .content img {
+        width: 17%;
+        margin-left: 10%;
+        margin-bottom: 2%;
+    }
+
+    .content .content-text-1 {
+        display: block;
+        font-size: 5vw;
+        width: 45%;
+        margin-left: 10%;
+        margin-bottom: 3%;
+    }
+
+    .content .content-text-2 {
+        font-size: 3.5vw;
+        width: 80%;
+        float: left;
+        margin-left: 10%;
+        margin-bottom: 2%;
+    }
+}
+
+/*-----------------------------------------------------------------*/
+.portof {
+    position: absolute;
+    width: 100%;
+    height: 126vw;
+    background-color: white;
+    padding-top: 3%;
+    margin-top: -1%;
+}
+
+.portof .portof-title {
+    font-family: BricolageGrotesque-Regular;
+    font-size: 6vw;
+    margin-left: 10%;
+    display: inline-block;
+}
+
+.portof .portof-text {
+    display: inline-block;
+    float: right;
+    font-family: BricolageGrotesque-Regular;
+    font-size: 1.5vw;
+    width: 22%;
+    text-align: right;
+    margin-top: 4%;
+    margin-right: 10%;
+    line-height: .9;
+}
+
+.portof .portof-content {
+    width: 82%;
+    margin-left: 9%;
+    padding: 1%;
+    margin-top: 3%;
+}
+
+.card {
+    display: inline-block;
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: .5s ease;
+}
+
+.portof-content .sty {
+    width: 49.5%;
+}
+
+.portof-content .sty-2 {
+    width: 29.4%;
+}
+
+.portof-content .sty-3 {
+    width: 69.6%;
+}
+
+.portof-content .sty-4 {
+    width: 100%;
+}
+
+.portof-content .sty-5 {
+    width: 32.75%;
+}
+
+.portof .portof-content img {
+    width: 100%;
+}
+
+.portof .rgt {
+    margin-right: .5%;
+}
+
+.portof .portof-content .btm {
+    margin-bottom: .5%;
+}
+
+.portof .card:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    filter: grayscale(0%);
+}
+
+.scope {
+    font-family: Lato-Reg;
+    font-size: 1.3vw;
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 3%;
+    width: 51%;
+}
+
+.scope .scope-title {
+    margin-bottom: 2%;
+    display: block;
+    color: #a6a6a6;
+}
+
+.scope p {
+    display: inline-block;
+}
+
+.scope-gd {
+    margin-right: 17%;
+    margin-bottom: 2%;
+}
+
+.scope-pv {
+    margin-right: 17%;
+    margin-bottom: 2%;
+}
+
+.scope-3d {
+    margin-right: 20.8%;
+}
+
+.scope-branding {
+    margin-right: 15.6%;
+}
+
+.location {
+    font-family: Lato-Reg;
+    font-size: 1.3vw;
+    float: right;
+    margin-right: 12%;
+    margin-top: 3%;
+}
+
+.location .location-title {
+    margin-bottom: 9%;
+    color: #a6a6a6;
+}
+
+@media (max-width: 1330px) {
+    .portof-content .sty-5 {
+        width: 32.7%;
+    }
+}
+
+@media (max-width: 1110px) {
+    .portof-content .sty-5 {
+        width: 32.65%;
+    }
+}
+
+@media (max-width: 995px) {
+    .portof-content .sty {
+        width: 49.4%;
+    }
+    
+    .portof-content .sty-2 {
+        width: 29.3%;
+    }
+
+    .portof-content .sty-3 {
+        width: 69.5%;
+    }
+}
+
+@media (max-width: 950px) {
+    .portof-content .sty-5 {
+        width: 32.6%;
+    }
+}
+
+@media (max-width: 830px) {
+    .portof-content .sty-5 {
+        width: 32.55%;
+    }
+}
+
+@media (max-width: 770px) {
+    .portof {
+        height: 231vw;
+    }
+
+    .portof .portof-title {
+        font-size: 8.7vw;
+    }
+
+    .portof .portof-text  {
+        margin-top: 5%;
+    }
+
+    .portof-content .sty {
+        width: 49%;
+    }
+    
+    .portof-content .sty-2 {
+        width: 29.05%;
+    }
+
+    .portof-content .sty-3 {
+        width: 69.05%;
+    }
+
+    .portof-content .sty-5 {
+        width: 32.4%;
+    }
+
+    .scope {
+        font-size: 3.4vw;
+        margin-left: 10%;
+        width: 60%;
+        margin-bottom: 7%;
+    }
+
+    .scope .scope-title {
+        margin-bottom: 2%;
+        display: block;
+        color: #a6a6a6;
+    }
+
+    .scope p {
+        display: inline-block;
+    }
+
+    .scope-gd, .scope-pv {
+        margin-right: 9%;
+        margin-bottom: 2%;
+    }
+
+    .scope-web {
+        margin-right: 31%;
+        margin-bottom: 2%;
+    }
+
+    .scope-3d {
+        margin-right: 21.7%;
+        margin-bottom: 2%;
+    }
+
+    .scope-branding {
+        margin-right: 25%;
+    }
+
+    .location {
+        font-size: 3.4vw;
+    }
+}
+
+@media (max-width: 555px) {
+    .portof-content .sty-5 {
+        width: 32.3%;
+    }
+}
+
+@media (max-width: 475px) {
+    .portof-content .sty-5 {
+        width: 32.2%;
+    }
+}
+
+@media (max-width: 415px) {
+    .portof-content .sty-5 {
+        width: 32.1%;
+    }
+}
+
+@media (max-width: 370px) {
+    .portof {
+        height: 233vw;
+    }
+    
+    .portof-content .sty-5 {
+        width: 32%;
+    }
+}
+
+@media (max-width: 340px) {
+    .portof-content .sty-2 {
+        width: 29%;
+    }
+
+    .portof-content .sty-3 {
+        width: 69%;
+    }
+}
+
+/*-----------------------------------------------------------------*/
+
+.footer {
+    width: 100%;
+    margin-top: 123vw;
+}
+
+.footer .footer-bg {
+    position: absolute;
+    width: 100%;
+}
+
+.footer .footer-logo {
+    width: 8%;
+    position: absolute;
+    margin-top: 8%;
+    margin-left: 10%;
+}
+
+.footer .address, .footer .followus, .footer .contactus,
+.footer a {
+    color: white;
+    position: absolute;
+    margin-top: 8%;
+}
+
+.footer .address {
+    margin-left: 26%;
+    width: 20.7%;
+}
+
+.footer .followus {
+    margin-left: 53.5%;
+    width: 15%;
+}
+
+.footer .contactus {
+    margin-left: 70%;
+    width: 15%;
+}
+
+.footer .address .address-title {
+    font-family: Lato-Bold;
+    font-size: 1.4vw;
+    margin-bottom: 5%;
+}
+
+.footer .followus .followus-title,
+.footer .contactus .contactus-title {
+    font-family: Lato-Bold;
+    font-size: 1.4vw;
+}
+
+.footer .address .address-content {
+    font-family: Lato-Light;
+    font-size: 1vw;
+}
+
+.footer .followus .followus-content,
+.footer .contactus .contactus-content {
+    font-family: Lato-Light;
+    font-size: 1.1vw;
+}
+
+.footer .footer-decoration {
+    position: absolute;
+    width: 19%;
+    margin-left: 80%;
+    margin-top: 6%;
+}
+
+@media (max-width: 770px) {
+    .footer {
+        margin-top: 230vw;
+        height: 88vw;
+    }
+
+    .footer .footer-bg {
+        height: 88vw;
+    }
+
+    .footer .footer-logo {
+        width: 20%;
+    }
+
+    .footer .address, .footer .followus, .footer .contactus {
+        width: 76%;
+        margin-left: 10%;
+    }
+
+    .footer .address {
+        margin-top: 23%;
+    }
+
+    .footer .followus {
+        margin-top: 45%;
+    }
+
+    .footer .contactus {
+        margin-top: 65%;
+    }
+
+    .footer .address .address-title,
+    .footer .followus .followus-title,
+    .footer .contactus .contactus-title {
+        font-size: 4vw;
+    }
+
+    .footer .followus .followus-title,
+    .footer .contactus .contactus-title {
+        margin-bottom: -2%;
+    }
+
+    .footer .address .address-content,
+    .footer .followus .followus-content,
+    .footer .contactus .contactus-content {
+        font-size: 3vw;
+    }
+
+    .footer .footer-decoration {
+        width: 30%;
+        margin-left: 67%;
+    }
+}
+
+@media (max-width: 370px) {
+    .footer {
+        margin-top: 232vw;
+    }
+}
